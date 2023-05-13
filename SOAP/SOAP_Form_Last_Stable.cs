@@ -15,6 +15,9 @@ namespace SOAP
         public Form1()
         {
             InitializeComponent();
+            
+
+
         }
 
         private void Copy_Click(object sender, EventArgs e)
@@ -25,6 +28,23 @@ namespace SOAP
         private void Paste_Click(object sender, EventArgs e)
         {
             mainbox.SelectedText = Clipboard.GetText();
+        }
+
+        private void tb_pt_age_KeyPress(object sender, KeyPressEventArgs e)
+        {
+         
+        // Allow only numeric input and control characters (e.g. backspace)
+        if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+        {
+            e.Handled = true; // Suppress the key press
+        }
+            
+
+        }
+
+        private void combo_gender_DropDown(object sender, EventArgs e)
+        {
+
         }
     }
 }
