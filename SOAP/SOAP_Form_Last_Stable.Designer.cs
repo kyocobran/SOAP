@@ -35,16 +35,15 @@
             this.Paste = new System.Windows.Forms.ToolStripMenuItem();
             this.Reset_Form = new System.Windows.Forms.ToolStripMenuItem();
             this.tb_pt_age = new System.Windows.Forms.TextBox();
-            this.label_pt_age = new System.Windows.Forms.Label();
             this.combo_gender = new System.Windows.Forms.ComboBox();
-            this.label_gender = new System.Windows.Forms.Label();
+            this.combo_treatedfor = new System.Windows.Forms.ComboBox();
             this.Right_Click_Menu.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainbox
             // 
             this.mainbox.ContextMenuStrip = this.Right_Click_Menu;
-            this.mainbox.Location = new System.Drawing.Point(1083, 171);
+            this.mainbox.Location = new System.Drawing.Point(1545, 163);
             this.mainbox.Name = "mainbox";
             this.mainbox.Size = new System.Drawing.Size(677, 957);
             this.mainbox.TabIndex = 0;
@@ -82,21 +81,13 @@
             // 
             // tb_pt_age
             // 
-            this.tb_pt_age.Location = new System.Drawing.Point(143, 43);
+            this.tb_pt_age.Location = new System.Drawing.Point(36, 37);
             this.tb_pt_age.Name = "tb_pt_age";
             this.tb_pt_age.Size = new System.Drawing.Size(113, 29);
             this.tb_pt_age.TabIndex = 1;
             this.tb_pt_age.Tag = "Demographics";
+            this.tb_pt_age.Text = "Pt age";
             this.tb_pt_age.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_pt_age_KeyPress);
-            // 
-            // label_pt_age
-            // 
-            this.label_pt_age.AutoSize = true;
-            this.label_pt_age.Location = new System.Drawing.Point(24, 47);
-            this.label_pt_age.Name = "label_pt_age";
-            this.label_pt_age.Size = new System.Drawing.Size(113, 25);
-            this.label_pt_age.TabIndex = 2;
-            this.label_pt_age.Text = "Patient Age";
             // 
             // combo_gender
             // 
@@ -110,21 +101,22 @@
             "Transgender (MTF) Individual",
             "Transgender (FTM) Individual",
             "Non-binary individual"});
-            this.combo_gender.Location = new System.Drawing.Point(391, 40);
+            this.combo_gender.Location = new System.Drawing.Point(197, 37);
             this.combo_gender.Name = "combo_gender";
             this.combo_gender.Size = new System.Drawing.Size(121, 32);
             this.combo_gender.TabIndex = 3;
             this.combo_gender.Tag = "Demographics";
+            this.combo_gender.Text = "Gender";
             this.combo_gender.DropDown += new System.EventHandler(this.combo_gender_DropDown);
             // 
-            // label_gender
+            // combo_treatedfor
             // 
-            this.label_gender.AutoSize = true;
-            this.label_gender.Location = new System.Drawing.Point(308, 47);
-            this.label_gender.Name = "label_gender";
-            this.label_gender.Size = new System.Drawing.Size(77, 25);
-            this.label_gender.TabIndex = 4;
-            this.label_gender.Text = "Gender";
+            this.combo_treatedfor.FormattingEnabled = true;
+            this.combo_treatedfor.Location = new System.Drawing.Point(358, 37);
+            this.combo_treatedfor.Name = "combo_treatedfor";
+            this.combo_treatedfor.Size = new System.Drawing.Size(357, 32);
+            this.combo_treatedfor.TabIndex = 5;
+            this.combo_treatedfor.Text = "Patient is being treated for";
             // 
             // Form1
             // 
@@ -133,9 +125,8 @@
             this.AutoScroll = true;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(2476, 1376);
-            this.Controls.Add(this.label_gender);
+            this.Controls.Add(this.combo_treatedfor);
             this.Controls.Add(this.combo_gender);
-            this.Controls.Add(this.label_pt_age);
             this.Controls.Add(this.tb_pt_age);
             this.Controls.Add(this.mainbox);
             this.Name = "Form1";
@@ -156,9 +147,8 @@
         private System.Windows.Forms.ToolStripMenuItem Paste;
         private System.Windows.Forms.ToolStripMenuItem Reset_Form;
         private System.Windows.Forms.TextBox tb_pt_age;
-        private System.Windows.Forms.Label label_pt_age;
         private System.Windows.Forms.ComboBox combo_gender;
-        private System.Windows.Forms.Label label_gender;
+        private System.Windows.Forms.ComboBox combo_treatedfor;
     }
 }
 
