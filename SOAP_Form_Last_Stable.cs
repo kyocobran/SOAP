@@ -36,6 +36,7 @@ namespace SOAP
             {
                 combo_medlist_A.Items.Add(med);
             }
+            
         }
 
         private void Copy_Click(object sender, EventArgs e)
@@ -104,7 +105,6 @@ namespace SOAP
 
         private void combo_medlist_A_TextChanged(object sender, EventArgs e)
         {
-           
 
         }
 
