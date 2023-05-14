@@ -80,7 +80,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="psychdiagnosis.txt" />
+    <Content Include="bin\Debug\medlist.txt" />
+    <Content Include="bin\Debug\psychdiagnosis.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

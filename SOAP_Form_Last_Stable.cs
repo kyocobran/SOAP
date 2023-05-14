@@ -20,11 +20,20 @@ namespace SOAP
             // Links the psychdiagnosis.txt to comboboxes.
             // Read the lines of the linked text file
             string[] lines = System.IO.File.ReadAllLines("psychdiagnosis.txt");
-
+            
             // Add the lines to the combo box
             foreach (string line in lines)
             {
                 combo_treatedfor.Items.Add(line);
+            }
+
+            // Read the lines from medlist.txt
+            string[] medlist = File.ReadAllLines("medlist.txt");
+
+            // Add each line as an item to combo_medlist_A
+            foreach (string item in medlist)
+            {
+                combo_medlist_A.Items.Add(item);
             }
 
 

@@ -42,6 +42,7 @@
             this.button_add_dx = new System.Windows.Forms.Button();
             this.button_remove_dx = new System.Windows.Forms.Button();
             this.tb_treatedfor_box = new System.Windows.Forms.TextBox();
+            this.combo_medlist_A = new System.Windows.Forms.ComboBox();
             this.Right_Click_Menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -173,6 +174,17 @@
             this.tb_treatedfor_box.Size = new System.Drawing.Size(322, 91);
             this.tb_treatedfor_box.TabIndex = 8;
             // 
+            // combo_medlist_A
+            // 
+            this.combo_medlist_A.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.combo_medlist_A.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.combo_medlist_A.FormattingEnabled = true;
+            this.combo_medlist_A.Location = new System.Drawing.Point(383, 173);
+            this.combo_medlist_A.Name = "combo_medlist_A";
+            this.combo_medlist_A.Size = new System.Drawing.Size(332, 32);
+            this.combo_medlist_A.TabIndex = 12;
+            this.combo_medlist_A.Text = "Patient is taking";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
@@ -180,6 +192,7 @@
             this.AutoScroll = true;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(2476, 1376);
+            this.Controls.Add(this.combo_medlist_A);
             this.Controls.Add(this.tb_treatedfor_box);
             this.Controls.Add(this.button_remove_dx);
             this.Controls.Add(this.button_add_dx);
@@ -214,6 +227,7 @@
         private System.Windows.Forms.Button button_add_dx;
         private System.Windows.Forms.Button button_remove_dx;
         private System.Windows.Forms.TextBox tb_treatedfor_box;
+        private System.Windows.Forms.ComboBox combo_medlist_A;
     }
 }
 
