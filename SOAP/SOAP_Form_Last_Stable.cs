@@ -56,5 +56,47 @@ namespace SOAP
         {
 
         }
+
+        private void combo_treatedfor_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                tb_treatedfor_box.AppendText(combo_treatedfor.Text + Environment.NewLine);
+                combo_treatedfor.Text = "";
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        private void button_add_dx_Click(object sender, EventArgs e)
+        {
+            tb_treatedfor_box.AppendText(combo_treatedfor.Text + Environment.NewLine);
+            combo_treatedfor.Text = "";
+        }
+
+        private void button_remove_dx_Click(object sender, EventArgs e)
+        {
+            string text = tb_treatedfor_box.Text;
+            if (!string.IsNullOrEmpty(text))
+            {
+                // Split the text into lines
+                string[] lines = text.Split(new string[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
+                if (lines.Length > 0)
+                {
+                    // Remove the last line
+                    string removedLine = lines[lines.Length - 1];
+                    Array.Resize(ref lines, lines.Length - 1);
+
+                    // Join the remaining lines and set the TextBox text
+                    string remainingText = string.Join(Environment.NewLine, lines);
+                    tb_treatedfor_box.Text = remainingText;
+
+                    // Display the removed line in a message box
+                    MessageBox.Show("Removed: " + removedLine);
+                }
+            }
+        }
+
+
     }
 }

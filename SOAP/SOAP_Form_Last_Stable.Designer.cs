@@ -37,6 +37,11 @@
             this.tb_pt_age = new System.Windows.Forms.TextBox();
             this.combo_gender = new System.Windows.Forms.ComboBox();
             this.combo_treatedfor = new System.Windows.Forms.ComboBox();
+            this.button_populator = new System.Windows.Forms.Button();
+            this.button_reset = new System.Windows.Forms.Button();
+            this.button_add_dx = new System.Windows.Forms.Button();
+            this.button_remove_dx = new System.Windows.Forms.Button();
+            this.tb_treatedfor_box = new System.Windows.Forms.TextBox();
             this.Right_Click_Menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,7 +51,7 @@
             this.mainbox.Location = new System.Drawing.Point(1545, 163);
             this.mainbox.Name = "mainbox";
             this.mainbox.Size = new System.Drawing.Size(677, 957);
-            this.mainbox.TabIndex = 0;
+            this.mainbox.TabIndex = 10;
             this.mainbox.Text = "";
             // 
             // Right_Click_Menu
@@ -119,6 +124,54 @@
             this.combo_treatedfor.Size = new System.Drawing.Size(357, 32);
             this.combo_treatedfor.TabIndex = 5;
             this.combo_treatedfor.Text = "Patient is being treated for";
+            this.combo_treatedfor.KeyDown += new System.Windows.Forms.KeyEventHandler(this.combo_treatedfor_KeyDown);
+            // 
+            // button_populator
+            // 
+            this.button_populator.Location = new System.Drawing.Point(1545, 45);
+            this.button_populator.Name = "button_populator";
+            this.button_populator.Size = new System.Drawing.Size(143, 75);
+            this.button_populator.TabIndex = 9;
+            this.button_populator.Text = "Populate";
+            this.button_populator.UseVisualStyleBackColor = true;
+            // 
+            // button_reset
+            // 
+            this.button_reset.Location = new System.Drawing.Point(2079, 45);
+            this.button_reset.Name = "button_reset";
+            this.button_reset.Size = new System.Drawing.Size(143, 75);
+            this.button_reset.TabIndex = 11;
+            this.button_reset.Text = "Reset";
+            this.button_reset.UseVisualStyleBackColor = true;
+            // 
+            // button_add_dx
+            // 
+            this.button_add_dx.Location = new System.Drawing.Point(744, 25);
+            this.button_add_dx.Name = "button_add_dx";
+            this.button_add_dx.Size = new System.Drawing.Size(136, 44);
+            this.button_add_dx.TabIndex = 6;
+            this.button_add_dx.Text = "Add Dx";
+            this.button_add_dx.UseVisualStyleBackColor = true;
+            this.button_add_dx.Click += new System.EventHandler(this.button_add_dx_Click);
+            // 
+            // button_remove_dx
+            // 
+            this.button_remove_dx.Location = new System.Drawing.Point(744, 88);
+            this.button_remove_dx.Name = "button_remove_dx";
+            this.button_remove_dx.Size = new System.Drawing.Size(136, 44);
+            this.button_remove_dx.TabIndex = 7;
+            this.button_remove_dx.Text = "Remove Dx";
+            this.button_remove_dx.UseVisualStyleBackColor = true;
+            this.button_remove_dx.Click += new System.EventHandler(this.button_remove_dx_Click);
+            // 
+            // tb_treatedfor_box
+            // 
+            this.tb_treatedfor_box.Location = new System.Drawing.Point(911, 28);
+            this.tb_treatedfor_box.Multiline = true;
+            this.tb_treatedfor_box.Name = "tb_treatedfor_box";
+            this.tb_treatedfor_box.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.tb_treatedfor_box.Size = new System.Drawing.Size(322, 91);
+            this.tb_treatedfor_box.TabIndex = 8;
             // 
             // Form1
             // 
@@ -127,6 +180,11 @@
             this.AutoScroll = true;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(2476, 1376);
+            this.Controls.Add(this.tb_treatedfor_box);
+            this.Controls.Add(this.button_remove_dx);
+            this.Controls.Add(this.button_add_dx);
+            this.Controls.Add(this.button_reset);
+            this.Controls.Add(this.button_populator);
             this.Controls.Add(this.combo_treatedfor);
             this.Controls.Add(this.combo_gender);
             this.Controls.Add(this.tb_pt_age);
@@ -151,6 +209,11 @@
         private System.Windows.Forms.TextBox tb_pt_age;
         private System.Windows.Forms.ComboBox combo_gender;
         private System.Windows.Forms.ComboBox combo_treatedfor;
+        private System.Windows.Forms.Button button_populator;
+        private System.Windows.Forms.Button button_reset;
+        private System.Windows.Forms.Button button_add_dx;
+        private System.Windows.Forms.Button button_remove_dx;
+        private System.Windows.Forms.TextBox tb_treatedfor_box;
     }
 }
 
