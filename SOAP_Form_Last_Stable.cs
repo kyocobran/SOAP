@@ -13,6 +13,7 @@ namespace SOAP
 {
     public partial class Form1 : Form
     {
+
         public Form1()
         {
             InitializeComponent();
@@ -27,9 +28,10 @@ namespace SOAP
                 combo_treatedfor.Items.Add(line);
             }
 
+
             // Read the lines from medlist.txt
             string[] medlist = File.ReadAllLines("medlist.txt");
-
+        
             // Add each line as an item to combo_medlist_A
             foreach (string item in medlist)
             {
@@ -101,6 +103,12 @@ namespace SOAP
                     tb_treatedfor_box.Text = remainingText;
                 }
             }
+        }
+
+        private void combo_medlist_A_TextChanged(object sender, EventArgs e)
+        {
+           
+
         }
 
 

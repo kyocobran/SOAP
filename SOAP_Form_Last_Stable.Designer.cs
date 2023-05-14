@@ -184,6 +184,7 @@
             this.combo_medlist_A.Size = new System.Drawing.Size(332, 32);
             this.combo_medlist_A.TabIndex = 12;
             this.combo_medlist_A.Text = "Patient is taking";
+            this.combo_medlist_A.TextChanged += new System.EventHandler(this.combo_medlist_A_TextChanged);
             // 
             // Form1
             // 
