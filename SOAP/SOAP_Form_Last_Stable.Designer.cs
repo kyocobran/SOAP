@@ -111,6 +111,8 @@
             // 
             // combo_treatedfor
             // 
+            this.combo_treatedfor.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.combo_treatedfor.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.combo_treatedfor.FormattingEnabled = true;
             this.combo_treatedfor.Location = new System.Drawing.Point(358, 37);
             this.combo_treatedfor.Name = "combo_treatedfor";

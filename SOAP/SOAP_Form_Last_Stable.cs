@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,7 +16,16 @@ namespace SOAP
         public Form1()
         {
             InitializeComponent();
-            
+
+            // Links the psychdiagnosis.txt to comboboxes.
+            // Read the lines of the linked text file
+            string[] lines = System.IO.File.ReadAllLines("psychdiagnosis.txt");
+
+            // Add the lines to the combo box
+            foreach (string line in lines)
+            {
+                combo_treatedfor.Items.Add(line);
+            }
 
 
         }
