@@ -90,9 +90,6 @@ namespace SOAP
                     // Join the remaining lines and set the TextBox text
                     string remainingText = string.Join(Environment.NewLine, lines);
                     tb_treatedfor_box.Text = remainingText;
-
-                    // Display the removed line in a message box
-                    MessageBox.Show("Removed: " + removedLine);
                 }
             }
         }
