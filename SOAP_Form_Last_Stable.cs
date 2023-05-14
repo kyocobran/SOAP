@@ -29,14 +29,11 @@ namespace SOAP
             }
 
             // Read the lines from medlist.txt
-            string[] meds = File.ReadAllLines("medlist.txt");
-
-            // Add each line to the combo box
-            foreach (string med in meds)
+            foreach (string med in File.ReadAllLines("medlist.txt"))
             {
                 combo_medlist_A.Items.Add(med);
             }
-            
+
         }
 
         private void Copy_Click(object sender, EventArgs e)
