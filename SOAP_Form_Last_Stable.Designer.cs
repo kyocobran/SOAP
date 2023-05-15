@@ -43,6 +43,7 @@
             this.button_remove_dx = new System.Windows.Forms.Button();
             this.tb_treatedfor_box = new System.Windows.Forms.TextBox();
             this.combo_medlist_A = new System.Windows.Forms.ComboBox();
+            this.combo_purpose = new System.Windows.Forms.ComboBox();
             this.Right_Click_Menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -87,7 +88,7 @@
             // 
             // tb_pt_age
             // 
-            this.tb_pt_age.Location = new System.Drawing.Point(36, 37);
+            this.tb_pt_age.Location = new System.Drawing.Point(36, 67);
             this.tb_pt_age.Name = "tb_pt_age";
             this.tb_pt_age.Size = new System.Drawing.Size(113, 29);
             this.tb_pt_age.TabIndex = 1;
@@ -107,10 +108,10 @@
             "Transgender (MTF) Individual",
             "Transgender (FTM) Individual",
             "Non-binary individual"});
-            this.combo_gender.Location = new System.Drawing.Point(197, 37);
+            this.combo_gender.Location = new System.Drawing.Point(184, 64);
             this.combo_gender.Name = "combo_gender";
-            this.combo_gender.Size = new System.Drawing.Size(121, 32);
-            this.combo_gender.TabIndex = 3;
+            this.combo_gender.Size = new System.Drawing.Size(160, 32);
+            this.combo_gender.TabIndex = 2;
             this.combo_gender.Tag = "Demographics";
             this.combo_gender.Text = "Gender";
             this.combo_gender.DropDown += new System.EventHandler(this.combo_gender_DropDown);
@@ -120,10 +121,10 @@
             this.combo_treatedfor.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.combo_treatedfor.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.combo_treatedfor.FormattingEnabled = true;
-            this.combo_treatedfor.Location = new System.Drawing.Point(358, 37);
+            this.combo_treatedfor.Location = new System.Drawing.Point(367, 64);
             this.combo_treatedfor.Name = "combo_treatedfor";
             this.combo_treatedfor.Size = new System.Drawing.Size(357, 32);
-            this.combo_treatedfor.TabIndex = 5;
+            this.combo_treatedfor.TabIndex = 4;
             this.combo_treatedfor.Text = "Patient is being treated for";
             this.combo_treatedfor.KeyDown += new System.Windows.Forms.KeyEventHandler(this.combo_treatedfor_KeyDown);
             // 
@@ -135,6 +136,7 @@
             this.button_populator.TabIndex = 9;
             this.button_populator.Text = "Populate";
             this.button_populator.UseVisualStyleBackColor = true;
+            this.button_populator.Click += new System.EventHandler(this.button_populator_Click);
             // 
             // button_reset
             // 
@@ -144,6 +146,7 @@
             this.button_reset.TabIndex = 11;
             this.button_reset.Text = "Reset";
             this.button_reset.UseVisualStyleBackColor = true;
+            this.button_reset.Click += new System.EventHandler(this.button_reset_Click);
             // 
             // button_add_dx
             // 
@@ -185,6 +188,20 @@
             this.combo_medlist_A.TabIndex = 12;
             this.combo_medlist_A.Text = "Patient is taking";
             // 
+            // combo_purpose
+            // 
+            this.combo_purpose.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.combo_purpose.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.combo_purpose.FormattingEnabled = true;
+            this.combo_purpose.Items.AddRange(new object[] {
+            "IME",
+            "f/u"});
+            this.combo_purpose.Location = new System.Drawing.Point(36, 146);
+            this.combo_purpose.Name = "combo_purpose";
+            this.combo_purpose.Size = new System.Drawing.Size(178, 32);
+            this.combo_purpose.TabIndex = 3;
+            this.combo_purpose.Text = "Purpose of Visit";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
@@ -192,6 +209,7 @@
             this.AutoScroll = true;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(2476, 1376);
+            this.Controls.Add(this.combo_purpose);
             this.Controls.Add(this.combo_medlist_A);
             this.Controls.Add(this.tb_treatedfor_box);
             this.Controls.Add(this.button_remove_dx);
@@ -228,6 +246,7 @@
         private System.Windows.Forms.Button button_remove_dx;
         private System.Windows.Forms.TextBox tb_treatedfor_box;
         private System.Windows.Forms.ComboBox combo_medlist_A;
+        private System.Windows.Forms.ComboBox combo_purpose;
     }
 }
 

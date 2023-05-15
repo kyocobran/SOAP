@@ -11,12 +11,14 @@ using System.Windows.Forms;
 
 namespace SOAP
 {
+
     public partial class Form1 : Form
     {
 
         public Form1()
         {
             InitializeComponent();
+
 
             // Links the psychdiagnosis.txt to comboboxes.
             // Read the lines of the linked text file
@@ -38,6 +40,7 @@ namespace SOAP
             }
             
         }
+     
 
         private void Copy_Click(object sender, EventArgs e)
         {
@@ -108,6 +111,45 @@ namespace SOAP
            
         }
 
-       
+        private void button_populator_Click(object sender, EventArgs e)
+        {
+            // Get the values from the input controls
+            string age = tb_pt_age.Text;
+            string gender = combo_gender.Text;
+            string purpose = combo_purpose.Text;
+            string treatedFor = tb_treatedfor_box.Text;
+
+            // Combine the values into a single string
+            string result = $"Patient Age: {age}\r\nGender: {gender}\r\nPurpose of Visit: {purpose}\r\n\r\nPatient is treated for:\r\n{treatedFor}";
+
+            // Set the combined string as the text of the mainbox textbox
+            mainbox.Text = result;
+        }
+
+        private void ResetForm()
+        {
+            // Reset the patient age textbox
+            tb_pt_age.Text = "Pt age";
+
+            // Reset the gender combo box
+            combo_gender.Text = "Gender";
+
+            // Reset the purpose combo box
+            combo_purpose.Text = "Purpose of Visit";
+
+            // Reset the treatedfor combo box
+            combo_treatedfor.Text = "The patient is being treated for";
+
+            // Reset the treated for textbox
+            tb_treatedfor_box.Text = string.Empty;
+
+            // Clear the main textbox
+            mainbox.Text = string.Empty;
+        }
+
+        private void button_reset_Click(object sender, EventArgs e)
+        {
+            ResetForm();
+        }
     }
 }
