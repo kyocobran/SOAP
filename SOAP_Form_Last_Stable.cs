@@ -105,9 +105,9 @@ namespace SOAP
 
         private void combo_medlist_A_TextChanged(object sender, EventArgs e)
         {
-
+           
         }
 
-
+       
     }
 }

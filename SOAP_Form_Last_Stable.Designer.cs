@@ -176,13 +176,14 @@
             // 
             // combo_medlist_A
             // 
+            this.combo_medlist_A.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.combo_medlist_A.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.combo_medlist_A.FormattingEnabled = true;
             this.combo_medlist_A.Location = new System.Drawing.Point(383, 173);
             this.combo_medlist_A.Name = "combo_medlist_A";
             this.combo_medlist_A.Size = new System.Drawing.Size(332, 32);
             this.combo_medlist_A.TabIndex = 12;
             this.combo_medlist_A.Text = "Patient is taking";
-            this.combo_medlist_A.TextChanged += new System.EventHandler(this.combo_medlist_A_TextChanged);
             // 
             // Form1
             // 
