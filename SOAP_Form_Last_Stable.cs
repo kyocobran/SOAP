@@ -14,6 +14,7 @@ namespace SOAP
 
     public partial class Form1 : Form
     {
+        
 
         public Form1()
         {
@@ -84,6 +85,7 @@ namespace SOAP
         {
             tb_treatedfor_box.AppendText(combo_treatedfor.Text + Environment.NewLine);
             combo_treatedfor.Text = "";
+            
         }
 
         private void button_remove_dx_Click(object sender, EventArgs e)
@@ -105,11 +107,7 @@ namespace SOAP
                 }
             }
         }
-
-        private void combo_medlist_A_TextChanged(object sender, EventArgs e)
-        {
-           
-        }
+        
 
         private void button_populator_Click(object sender, EventArgs e)
         {
@@ -151,5 +149,7 @@ namespace SOAP
         {
             ResetForm();
         }
+
+        
     }
 }
