@@ -1,0 +1,5 @@
+﻿Male
+Female
+Transgender (MTF) individual
+Transgender (FTM) individual
+Non-binary individual

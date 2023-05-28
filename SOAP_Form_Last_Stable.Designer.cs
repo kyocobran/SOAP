@@ -34,23 +34,30 @@
             this.Copy = new System.Windows.Forms.ToolStripMenuItem();
             this.Paste = new System.Windows.Forms.ToolStripMenuItem();
             this.Reset_Form = new System.Windows.Forms.ToolStripMenuItem();
-            this.tb_pt_age = new System.Windows.Forms.TextBox();
-            this.combo_gender = new System.Windows.Forms.ComboBox();
+            this.tb_dob = new System.Windows.Forms.TextBox();
             this.combo_treatedfor = new System.Windows.Forms.ComboBox();
             this.button_populator = new System.Windows.Forms.Button();
             this.button_reset = new System.Windows.Forms.Button();
             this.button_add_dx = new System.Windows.Forms.Button();
             this.button_remove_dx = new System.Windows.Forms.Button();
-            this.tb_treatedfor_box = new System.Windows.Forms.TextBox();
             this.combo_medlist_A = new System.Windows.Forms.ComboBox();
             this.combo_purpose = new System.Windows.Forms.ComboBox();
+            this.tb_name = new System.Windows.Forms.TextBox();
+            this.label_age = new System.Windows.Forms.Label();
+            this.label_dob_instruction = new System.Windows.Forms.Label();
+            this.combo_gender = new System.Windows.Forms.ComboBox();
+            this.combo_sub_dx = new System.Windows.Forms.ComboBox();
+            this.listbox_treatedfor = new System.Windows.Forms.ListBox();
+            this.listbox_subhx_dx = new System.Windows.Forms.ListBox();
+            this.button_removesubhx_dx = new System.Windows.Forms.Button();
+            this.button_addsubhx_dx = new System.Windows.Forms.Button();
             this.Right_Click_Menu.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainbox
             // 
             this.mainbox.ContextMenuStrip = this.Right_Click_Menu;
-            this.mainbox.Location = new System.Drawing.Point(1545, 163);
+            this.mainbox.Location = new System.Drawing.Point(1238, 172);
             this.mainbox.Name = "mainbox";
             this.mainbox.Size = new System.Drawing.Size(677, 957);
             this.mainbox.TabIndex = 10;
@@ -71,14 +78,12 @@
             this.Copy.Name = "Copy";
             this.Copy.Size = new System.Drawing.Size(189, 34);
             this.Copy.Text = "Copy";
-            this.Copy.Click += new System.EventHandler(this.Copy_Click);
             // 
             // Paste
             // 
             this.Paste.Name = "Paste";
             this.Paste.Size = new System.Drawing.Size(189, 34);
             this.Paste.Text = "Paste";
-            this.Paste.Click += new System.EventHandler(this.Paste_Click);
             // 
             // Reset_Form
             // 
@@ -86,61 +91,40 @@
             this.Reset_Form.Size = new System.Drawing.Size(189, 34);
             this.Reset_Form.Text = "Reset Form";
             // 
-            // tb_pt_age
+            // tb_dob
             // 
-            this.tb_pt_age.Location = new System.Drawing.Point(36, 67);
-            this.tb_pt_age.Name = "tb_pt_age";
-            this.tb_pt_age.Size = new System.Drawing.Size(113, 29);
-            this.tb_pt_age.TabIndex = 1;
-            this.tb_pt_age.Tag = "Demographics";
-            this.tb_pt_age.Text = "Pt age";
-            this.tb_pt_age.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_pt_age_KeyPress);
-            // 
-            // combo_gender
-            // 
-            this.combo_gender.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.combo_gender.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.combo_gender.DropDownWidth = 175;
-            this.combo_gender.FormattingEnabled = true;
-            this.combo_gender.Items.AddRange(new object[] {
-            "Male",
-            "Female",
-            "Transgender (MTF) Individual",
-            "Transgender (FTM) Individual",
-            "Non-binary individual"});
-            this.combo_gender.Location = new System.Drawing.Point(184, 64);
-            this.combo_gender.Name = "combo_gender";
-            this.combo_gender.Size = new System.Drawing.Size(160, 32);
-            this.combo_gender.TabIndex = 2;
-            this.combo_gender.Tag = "Demographics";
-            this.combo_gender.Text = "Gender";
-            this.combo_gender.DropDown += new System.EventHandler(this.combo_gender_DropDown);
+            this.tb_dob.Location = new System.Drawing.Point(61, 172);
+            this.tb_dob.Name = "tb_dob";
+            this.tb_dob.Size = new System.Drawing.Size(340, 29);
+            this.tb_dob.TabIndex = 2;
+            this.tb_dob.Tag = "Demographics";
+            this.tb_dob.Text = "Enter DOB in mm dd yy format";
+            this.tb_dob.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_dob_KeyDown);
+            this.tb_dob.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_dob_KeyPress);
             // 
             // combo_treatedfor
             // 
             this.combo_treatedfor.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.combo_treatedfor.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.combo_treatedfor.FormattingEnabled = true;
-            this.combo_treatedfor.Location = new System.Drawing.Point(367, 64);
+            this.combo_treatedfor.Location = new System.Drawing.Point(61, 332);
             this.combo_treatedfor.Name = "combo_treatedfor";
             this.combo_treatedfor.Size = new System.Drawing.Size(357, 32);
-            this.combo_treatedfor.TabIndex = 4;
+            this.combo_treatedfor.TabIndex = 5;
             this.combo_treatedfor.Text = "Patient is being treated for";
-            this.combo_treatedfor.KeyDown += new System.Windows.Forms.KeyEventHandler(this.combo_treatedfor_KeyDown);
             // 
             // button_populator
             // 
-            this.button_populator.Location = new System.Drawing.Point(1545, 45);
+            this.button_populator.Location = new System.Drawing.Point(1238, 91);
             this.button_populator.Name = "button_populator";
             this.button_populator.Size = new System.Drawing.Size(143, 75);
             this.button_populator.TabIndex = 9;
             this.button_populator.Text = "Populate";
             this.button_populator.UseVisualStyleBackColor = true;
-            this.button_populator.Click += new System.EventHandler(this.button_populator_Click);
             // 
             // button_reset
             // 
-            this.button_reset.Location = new System.Drawing.Point(2079, 45);
+            this.button_reset.Location = new System.Drawing.Point(1772, 77);
             this.button_reset.Name = "button_reset";
             this.button_reset.Size = new System.Drawing.Size(143, 75);
             this.button_reset.TabIndex = 11;
@@ -150,39 +134,28 @@
             // 
             // button_add_dx
             // 
-            this.button_add_dx.Location = new System.Drawing.Point(744, 25);
+            this.button_add_dx.Location = new System.Drawing.Point(462, 332);
             this.button_add_dx.Name = "button_add_dx";
             this.button_add_dx.Size = new System.Drawing.Size(136, 44);
             this.button_add_dx.TabIndex = 6;
             this.button_add_dx.Text = "Add Dx";
             this.button_add_dx.UseVisualStyleBackColor = true;
-            this.button_add_dx.Click += new System.EventHandler(this.button_add_dx_Click);
             // 
             // button_remove_dx
             // 
-            this.button_remove_dx.Location = new System.Drawing.Point(744, 88);
+            this.button_remove_dx.Location = new System.Drawing.Point(462, 395);
             this.button_remove_dx.Name = "button_remove_dx";
             this.button_remove_dx.Size = new System.Drawing.Size(136, 44);
             this.button_remove_dx.TabIndex = 7;
             this.button_remove_dx.Text = "Remove Dx";
             this.button_remove_dx.UseVisualStyleBackColor = true;
-            this.button_remove_dx.Click += new System.EventHandler(this.button_remove_dx_Click);
-            // 
-            // tb_treatedfor_box
-            // 
-            this.tb_treatedfor_box.Location = new System.Drawing.Point(911, 28);
-            this.tb_treatedfor_box.Multiline = true;
-            this.tb_treatedfor_box.Name = "tb_treatedfor_box";
-            this.tb_treatedfor_box.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tb_treatedfor_box.Size = new System.Drawing.Size(322, 91);
-            this.tb_treatedfor_box.TabIndex = 8;
             // 
             // combo_medlist_A
             // 
             this.combo_medlist_A.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.combo_medlist_A.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.combo_medlist_A.FormattingEnabled = true;
-            this.combo_medlist_A.Location = new System.Drawing.Point(383, 173);
+            this.combo_medlist_A.Location = new System.Drawing.Point(69, 791);
             this.combo_medlist_A.Name = "combo_medlist_A";
             this.combo_medlist_A.Size = new System.Drawing.Size(332, 32);
             this.combo_medlist_A.TabIndex = 12;
@@ -193,14 +166,99 @@
             this.combo_purpose.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.combo_purpose.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.combo_purpose.FormattingEnabled = true;
-            this.combo_purpose.Items.AddRange(new object[] {
-            "IME",
-            "f/u"});
-            this.combo_purpose.Location = new System.Drawing.Point(36, 146);
+            this.combo_purpose.Location = new System.Drawing.Point(548, 45);
             this.combo_purpose.Name = "combo_purpose";
-            this.combo_purpose.Size = new System.Drawing.Size(178, 32);
+            this.combo_purpose.Size = new System.Drawing.Size(357, 32);
             this.combo_purpose.TabIndex = 3;
             this.combo_purpose.Text = "Purpose of Visit";
+            // 
+            // tb_name
+            // 
+            this.tb_name.Location = new System.Drawing.Point(61, 45);
+            this.tb_name.Multiline = true;
+            this.tb_name.Name = "tb_name";
+            this.tb_name.Size = new System.Drawing.Size(357, 32);
+            this.tb_name.TabIndex = 1;
+            this.tb_name.Tag = "Demographics";
+            this.tb_name.Text = "Patient name";
+            // 
+            // label_age
+            // 
+            this.label_age.AutoSize = true;
+            this.label_age.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_age.Location = new System.Drawing.Point(420, 172);
+            this.label_age.Name = "label_age";
+            this.label_age.Size = new System.Drawing.Size(82, 29);
+            this.label_age.TabIndex = 13;
+            this.label_age.Text = "Pt age";
+            // 
+            // label_dob_instruction
+            // 
+            this.label_dob_instruction.AutoSize = true;
+            this.label_dob_instruction.Location = new System.Drawing.Point(56, 102);
+            this.label_dob_instruction.Name = "label_dob_instruction";
+            this.label_dob_instruction.Size = new System.Drawing.Size(442, 50);
+            this.label_dob_instruction.TabIndex = 14;
+            this.label_dob_instruction.Text = "Enter the pt\'s DOB (mm yy dd) and press enter.\r\nPatient\'s age is automatically ca" +
+    "lculated to the left.";
+            // 
+            // combo_gender
+            // 
+            this.combo_gender.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.combo_gender.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.combo_gender.FormattingEnabled = true;
+            this.combo_gender.Location = new System.Drawing.Point(548, 113);
+            this.combo_gender.Name = "combo_gender";
+            this.combo_gender.Size = new System.Drawing.Size(357, 32);
+            this.combo_gender.TabIndex = 4;
+            this.combo_gender.Text = "Gender";
+            // 
+            // combo_sub_dx
+            // 
+            this.combo_sub_dx.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.combo_sub_dx.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.combo_sub_dx.FormattingEnabled = true;
+            this.combo_sub_dx.Location = new System.Drawing.Point(61, 560);
+            this.combo_sub_dx.Name = "combo_sub_dx";
+            this.combo_sub_dx.Size = new System.Drawing.Size(357, 32);
+            this.combo_sub_dx.TabIndex = 9;
+            this.combo_sub_dx.Text = "Additional SubHx if applicable";
+            // 
+            // listbox_treatedfor
+            // 
+            this.listbox_treatedfor.FormattingEnabled = true;
+            this.listbox_treatedfor.ItemHeight = 24;
+            this.listbox_treatedfor.Location = new System.Drawing.Point(624, 332);
+            this.listbox_treatedfor.Name = "listbox_treatedfor";
+            this.listbox_treatedfor.Size = new System.Drawing.Size(316, 100);
+            this.listbox_treatedfor.TabIndex = 8;
+            // 
+            // listbox_subhx_dx
+            // 
+            this.listbox_subhx_dx.FormattingEnabled = true;
+            this.listbox_subhx_dx.ItemHeight = 24;
+            this.listbox_subhx_dx.Location = new System.Drawing.Point(624, 560);
+            this.listbox_subhx_dx.Name = "listbox_subhx_dx";
+            this.listbox_subhx_dx.Size = new System.Drawing.Size(316, 100);
+            this.listbox_subhx_dx.TabIndex = 12;
+            // 
+            // button_removesubhx_dx
+            // 
+            this.button_removesubhx_dx.Location = new System.Drawing.Point(462, 623);
+            this.button_removesubhx_dx.Name = "button_removesubhx_dx";
+            this.button_removesubhx_dx.Size = new System.Drawing.Size(136, 44);
+            this.button_removesubhx_dx.TabIndex = 11;
+            this.button_removesubhx_dx.Text = "Remove Dx";
+            this.button_removesubhx_dx.UseVisualStyleBackColor = true;
+            // 
+            // button_addsubhx_dx
+            // 
+            this.button_addsubhx_dx.Location = new System.Drawing.Point(462, 560);
+            this.button_addsubhx_dx.Name = "button_addsubhx_dx";
+            this.button_addsubhx_dx.Size = new System.Drawing.Size(136, 44);
+            this.button_addsubhx_dx.TabIndex = 10;
+            this.button_addsubhx_dx.Text = "Add Dx";
+            this.button_addsubhx_dx.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -209,16 +267,23 @@
             this.AutoScroll = true;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(2476, 1376);
+            this.Controls.Add(this.listbox_subhx_dx);
+            this.Controls.Add(this.button_removesubhx_dx);
+            this.Controls.Add(this.button_addsubhx_dx);
+            this.Controls.Add(this.listbox_treatedfor);
+            this.Controls.Add(this.combo_sub_dx);
+            this.Controls.Add(this.combo_gender);
+            this.Controls.Add(this.label_dob_instruction);
+            this.Controls.Add(this.label_age);
+            this.Controls.Add(this.tb_name);
             this.Controls.Add(this.combo_purpose);
             this.Controls.Add(this.combo_medlist_A);
-            this.Controls.Add(this.tb_treatedfor_box);
             this.Controls.Add(this.button_remove_dx);
             this.Controls.Add(this.button_add_dx);
             this.Controls.Add(this.button_reset);
             this.Controls.Add(this.button_populator);
             this.Controls.Add(this.combo_treatedfor);
-            this.Controls.Add(this.combo_gender);
-            this.Controls.Add(this.tb_pt_age);
+            this.Controls.Add(this.tb_dob);
             this.Controls.Add(this.mainbox);
             this.Name = "Form1";
             this.RightToLeftLayout = true;
@@ -237,16 +302,23 @@
         private System.Windows.Forms.ToolStripMenuItem Copy;
         private System.Windows.Forms.ToolStripMenuItem Paste;
         private System.Windows.Forms.ToolStripMenuItem Reset_Form;
-        private System.Windows.Forms.TextBox tb_pt_age;
-        private System.Windows.Forms.ComboBox combo_gender;
+        private System.Windows.Forms.TextBox tb_dob;
         private System.Windows.Forms.ComboBox combo_treatedfor;
         private System.Windows.Forms.Button button_populator;
         private System.Windows.Forms.Button button_reset;
         private System.Windows.Forms.Button button_add_dx;
         private System.Windows.Forms.Button button_remove_dx;
-        private System.Windows.Forms.TextBox tb_treatedfor_box;
         private System.Windows.Forms.ComboBox combo_medlist_A;
         private System.Windows.Forms.ComboBox combo_purpose;
+        private System.Windows.Forms.TextBox tb_name;
+        private System.Windows.Forms.Label label_age;
+        private System.Windows.Forms.Label label_dob_instruction;
+        private System.Windows.Forms.ComboBox combo_gender;
+        private System.Windows.Forms.ComboBox combo_sub_dx;
+        private System.Windows.Forms.ListBox listbox_treatedfor;
+        private System.Windows.Forms.ListBox listbox_subhx_dx;
+        private System.Windows.Forms.Button button_removesubhx_dx;
+        private System.Windows.Forms.Button button_addsubhx_dx;
     }
 }
 

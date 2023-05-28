@@ -81,7 +81,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="bin\Debug\medlist.txt" />
-    <Content Include="bin\Debug\psychdiagnosis.txt" />
+    <Content Include="psychdiagnosis.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="gender.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="visit_purpose.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
