@@ -59,6 +59,7 @@
             this.button_removepsychmeds = new System.Windows.Forms.Button();
             this.button_addpsychmeds = new System.Windows.Forms.Button();
             this.combo_psychmeds = new System.Windows.Forms.ComboBox();
+            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
             this.Right_Click_Menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -355,6 +356,14 @@
             this.combo_psychmeds.Text = "Psych meds prescribed by us";
             this.combo_psychmeds.KeyDown += new System.Windows.Forms.KeyEventHandler(this.combo_psychmeds_KeyDown);
             // 
+            // vScrollBar1
+            // 
+            this.vScrollBar1.Enabled = false;
+            this.vScrollBar1.Location = new System.Drawing.Point(1977, 9);
+            this.vScrollBar1.Name = "vScrollBar1";
+            this.vScrollBar1.Size = new System.Drawing.Size(36, 1479);
+            this.vScrollBar1.TabIndex = 253;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
@@ -362,6 +371,7 @@
             this.AutoScroll = true;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(2476, 1376);
+            this.Controls.Add(this.vScrollBar1);
             this.Controls.Add(this.listbox_psychmeds);
             this.Controls.Add(this.button_removepsychmeds);
             this.Controls.Add(this.button_addpsychmeds);
@@ -429,6 +439,7 @@
         private System.Windows.Forms.Button button_removepsychmeds;
         private System.Windows.Forms.Button button_addpsychmeds;
         private System.Windows.Forms.ComboBox combo_psychmeds;
+        private System.Windows.Forms.VScrollBar vScrollBar1;
     }
 }
 
