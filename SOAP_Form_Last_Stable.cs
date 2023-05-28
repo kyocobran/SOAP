@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Newtonsoft.Json;
 using System.Globalization;
 using static System.Globalization.DateTimeStyles;
 
@@ -385,6 +386,35 @@ namespace SOAP
 
                 e.Handled = true;
             }
+
+
+        }
+
+        private void tb_dob_Leave(object sender, EventArgs e)
+        {
+            string input = tb_dob.Text.Trim();
+
+            DateTime dob;
+            if (DateTime.TryParse(input, out dob))
+            {
+                tb_dob.Text = dob.ToString("MM/dd/yyyy");
+
+                // Calculate age based on today's date
+                int age = CalculateAge(dob);
+                label_age.Text = age.ToString();
+            }
+            else if (DateTime.TryParseExact(input, new[] { "MMM d yy", "MMM d yyyy", "M d yy", "M d yyyy", "MM/dd/yy", "MM/dd/yyyy" }, CultureInfo.InvariantCulture, DateTimeStyles.None, out dob))
+            {
+                tb_dob.Text = dob.ToString("MM/dd/yyyy");
+
+                // Calculate age based on today's date
+                int age = CalculateAge(dob);
+                label_age.Text = age.ToString();
+            }
+            else
+            {
+                // Handle invalid input or show an error message
+            }
         }
 
         private int CalculateAge(DateTime dateOfBirth)
@@ -401,7 +431,7 @@ namespace SOAP
         //
 
 
-        //Reset the form to it's initialized state
+        //Reset the form to its initialized state
         private void button_reset_Click(object sender, EventArgs e)
         {
             tb_name.Text = Initial_tb_name;
@@ -443,6 +473,118 @@ namespace SOAP
             }
         }
 
-        
+        //
+        //CREATING THE DATABINDINGS FOR SAVING AND LOADING PATIENT DATA
+        public class PatientData
+        {
+            public string mainbox_Data { get; set; }
+            public string name_Data { get; set; }
+            public string dob_Data { get; set; }
+            public string gender_Data { get; set; }
+            public string purpose_Data { get; set; }
+            public List<string> treatedforitems_Data { get; set; }
+            public List<string> subhx_dx_items_Data { get; set; }
+            public List<string> medhxdx_items_Data { get; set; }
+            public List<string> psychmeds_items_Data { get; set; }
+            // Add other properties for remaining controls
+        }
+
+        //SAVES PATIENT DATA AS A JSON FILE
+        private void button_save_ptdata_Click(object sender, EventArgs e)
+        {
+            // Gather data from controls and create a data object
+            var patientData = new PatientData
+            {
+                mainbox_Data = mainbox.Text,
+                name_Data = tb_name.Text,
+                dob_Data = tb_dob.Text,
+                gender_Data = combo_gender.SelectedItem?.ToString(),
+                purpose_Data = combo_purpose.SelectedItem?.ToString(),
+                treatedforitems_Data = listbox_treatedfor.Items.Cast<string>().ToList(),
+                subhx_dx_items_Data = listbox_subhx_dx.Items.Cast<string>().ToList(),
+                medhxdx_items_Data = listbox_medhxdx.Items.Cast<string>().ToList(),
+                psychmeds_items_Data = listbox_psychmeds.Items.Cast<string>().ToList(),
+                // Add other properties for remaining controls
+            };
+
+            // Show the SaveFileDialog
+            using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+            {
+                saveFileDialog.Filter = "JSON Files (*.json)|*.json";
+                saveFileDialog.Title = "Save Patient Data";
+                saveFileDialog.DefaultExt = "json";
+                saveFileDialog.FileName = "patient_data"; // Default file name
+
+                // If the user selects a file and clicks the "Save" button
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    // Get the selected file name
+                    string fileName = saveFileDialog.FileName;
+
+                    // Serialize the data object to JSON
+                    string jsonData = JsonConvert.SerializeObject(patientData);
+
+                    // Write the JSON data to the selected file
+                    File.WriteAllText(fileName, jsonData);
+                }
+            }
+        }
+
+        //LOADS PATIENT DATA FROM THE JSON FILE
+        private void button_loadptdata_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "JSON Files (*.json)|*.json";
+                openFileDialog.Title = "Load Patient Data";
+                openFileDialog.DefaultExt = "json";
+
+                // If the user selects a file and clicks the "Open" button
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    // Get the selected file name
+                    string fileName = openFileDialog.FileName;
+
+                    // Read the JSON data from the selected file
+                    string jsonData = File.ReadAllText(fileName);
+
+                    // Deserialize the JSON data to the patient data object
+                    var patientData = JsonConvert.DeserializeObject<PatientData>(jsonData);
+
+                    // Populate the form controls with the loaded data
+                    mainbox.Text = patientData.mainbox_Data;
+                    tb_name.Text = patientData.name_Data;
+                    tb_dob.Text = patientData.dob_Data;
+                    combo_gender.SelectedItem = patientData.gender_Data;
+                    combo_purpose.SelectedItem = patientData.purpose_Data;
+                    listbox_treatedfor.Items.Clear();
+                    listbox_treatedfor.Items.AddRange(patientData.treatedforitems_Data.ToArray());
+                    listbox_subhx_dx.Items.Clear();
+                    listbox_subhx_dx.Items.AddRange(patientData.subhx_dx_items_Data.ToArray());
+                    listbox_medhxdx.Items.Clear();
+                    listbox_medhxdx.Items.AddRange(patientData.medhxdx_items_Data.ToArray());
+                    listbox_psychmeds.Items.Clear();
+                    listbox_psychmeds.Items.AddRange(patientData.psychmeds_items_Data.ToArray());
+
+                    // Add code to populate other form controls as 
+
+                    
+                    // Calculate age based on loaded DOB
+                    DateTime dob;
+                    if (DateTime.TryParseExact(patientData.dob_Data, new[] { "MM/dd/yyyy" }, CultureInfo.InvariantCulture, DateTimeStyles.None, out dob))
+                    {
+                        int age = CalculateAge(dob);
+                        label_age.Text = age.ToString();
+                    }
+                    else
+                    {
+                        // Handle invalid DOB format
+                        // You can show an error message or handle the situation according to your requirements
+                    }
+                }
+            }
+        }
+        //ABOVE CONCLUDES THE DATABINDING
+        //
     }
 }

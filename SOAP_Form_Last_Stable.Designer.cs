@@ -60,6 +60,8 @@
             this.button_addpsychmeds = new System.Windows.Forms.Button();
             this.combo_psychmeds = new System.Windows.Forms.ComboBox();
             this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
+            this.button_saveptdata = new System.Windows.Forms.Button();
+            this.button_loadptdata = new System.Windows.Forms.Button();
             this.Right_Click_Menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -101,6 +103,7 @@
             this.tb_dob.Text = "Enter DOB in mm dd yy format";
             this.tb_dob.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_dob_KeyDown);
             this.tb_dob.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_dob_KeyPress);
+            this.tb_dob.Leave += new System.EventHandler(this.tb_dob_Leave);
             // 
             // button_populator
             // 
@@ -364,6 +367,26 @@
             this.vScrollBar1.Size = new System.Drawing.Size(36, 1479);
             this.vScrollBar1.TabIndex = 253;
             // 
+            // button_saveptdata
+            // 
+            this.button_saveptdata.Location = new System.Drawing.Point(1057, 214);
+            this.button_saveptdata.Name = "button_saveptdata";
+            this.button_saveptdata.Size = new System.Drawing.Size(143, 75);
+            this.button_saveptdata.TabIndex = 254;
+            this.button_saveptdata.Text = "Save patient data";
+            this.button_saveptdata.UseVisualStyleBackColor = true;
+            this.button_saveptdata.Click += new System.EventHandler(this.button_save_ptdata_Click);
+            // 
+            // button_loadptdata
+            // 
+            this.button_loadptdata.Location = new System.Drawing.Point(1057, 332);
+            this.button_loadptdata.Name = "button_loadptdata";
+            this.button_loadptdata.Size = new System.Drawing.Size(143, 75);
+            this.button_loadptdata.TabIndex = 255;
+            this.button_loadptdata.Text = "Load Patient Data";
+            this.button_loadptdata.UseVisualStyleBackColor = true;
+            this.button_loadptdata.Click += new System.EventHandler(this.button_loadptdata_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
@@ -371,6 +394,8 @@
             this.AutoScroll = true;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(2476, 1376);
+            this.Controls.Add(this.button_loadptdata);
+            this.Controls.Add(this.button_saveptdata);
             this.Controls.Add(this.vScrollBar1);
             this.Controls.Add(this.listbox_psychmeds);
             this.Controls.Add(this.button_removepsychmeds);
@@ -440,6 +465,8 @@
         private System.Windows.Forms.Button button_addpsychmeds;
         private System.Windows.Forms.ComboBox combo_psychmeds;
         private System.Windows.Forms.VScrollBar vScrollBar1;
+        private System.Windows.Forms.Button button_saveptdata;
+        private System.Windows.Forms.Button button_loadptdata;
     }
 }
 
