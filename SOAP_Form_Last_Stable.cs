@@ -16,12 +16,19 @@ namespace SOAP
 
     public partial class Form1 : Form
     {
+        
         //DECLARE INITIAL VARIABLES FOR RESET FUNCTION
         private string Initial_tb_name;
         private string Initial_tb_dob;
         private string Initial_combo_gender;
         private string Initial_combo_purpose;
         private string Initial_label_age;
+        private string Initial_combo_treatedfor;
+
+        //declare initial variable for listbox_treatedfor
+        private List<string> Initial_listbox_treatedfor_items;
+
+
 
         public Form1()
         {
@@ -34,16 +41,24 @@ namespace SOAP
             Initial_combo_gender = combo_gender.Text;
             Initial_combo_purpose = combo_purpose.Text;
             Initial_label_age = label_age.Text;
+            Initial_combo_treatedfor = combo_treatedfor.Text;
+
+            // Store the initial values for listbox_treatedfor
+            Initial_listbox_treatedfor_items = new List<string>();
+            foreach (string treatedfor_item in listbox_treatedfor.Items)
+            {
+                Initial_listbox_treatedfor_items.Add(treatedfor_item);
+            }
 
             //ATTACH TEXT LIST TO RESPECTIVE COMBO BOXES
             string[] genderlist = File.ReadAllLines("gender.txt");
             combo_gender.Items.AddRange(genderlist);
-            
-            string[] treatedforlist = File.ReadAllLines("psychdiagnosis.txt");
-            combo_treatedfor.Items.AddRange(treatedforlist);
 
             string[] purposelist = File.ReadAllLines("visit_purpose.txt");
             combo_purpose.Items.AddRange(purposelist);
+
+            string[] treatedforlist = File.ReadAllLines("psychdiagnosis.txt");
+            combo_treatedfor.Items.AddRange(treatedforlist);
 
 
         }
@@ -57,14 +72,57 @@ namespace SOAP
         {
             tb_name.SelectAll();
         }
-        
 
+        //
+        //FOR POPULATING THE COMBO_TREATEDFOR LISTBOX
+        //allow for pressing enter in the combo treated for box
+        private void combo_treatedfor_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                string treatedfordiagnosis = combo_treatedfor.Text.Trim();
 
+                if (!string.IsNullOrEmpty(treatedfordiagnosis))
+                {
+                    AddTreatedForListBox(treatedfordiagnosis);
+                }
 
+                e.Handled = true;
+            }
+        }
 
+        //allows for pressing the addtreatedfor_dx button
+        private void button_addtreatedfor_dx_Click(object sender, EventArgs e)
+        {
+            string treatedfordiagnosis = combo_treatedfor.Text.Trim();
 
+            if (!string.IsNullOrEmpty(treatedfordiagnosis))
+            {
+                AddTreatedForListBox(treatedfordiagnosis);
+            }
+        }
 
+        //method for actually adding diagnoses
+        private void AddTreatedForListBox(string treatedfordiagnosis)
+        {
+            if (!listbox_treatedfor.Items.Contains(treatedfordiagnosis))
+            {
+                listbox_treatedfor.Items.Add(treatedfordiagnosis);
+            }
 
+            combo_treatedfor.Text = string.Empty;
+        }
+
+        //allows for removing a highlighted diagnosis from listbox_treatedfor
+        private void button_removedtreatedfor_dx_Click(object sender, EventArgs e)
+        {
+            if (listbox_treatedfor.SelectedIndex != -1)
+            {
+                listbox_treatedfor.Items.RemoveAt(listbox_treatedfor.SelectedIndex);
+            }
+        }
+        //ABOVE
+        //
 
 
 
@@ -150,6 +208,14 @@ namespace SOAP
             combo_gender.Text = Initial_combo_gender;
             combo_purpose.Text = Initial_combo_purpose;
             label_age.Text = Initial_label_age;
+            combo_treatedfor.Text = Initial_combo_treatedfor;
+
+            //changes the listbox_treatedfor to it's original state
+            listbox_treatedfor.Items.Clear();
+            foreach (string treatedfor_item in Initial_listbox_treatedfor_items)
+            {
+                listbox_treatedfor.Items.Add(treatedfor_item);
+            }
         }
 
     }

@@ -35,11 +35,10 @@
             this.Paste = new System.Windows.Forms.ToolStripMenuItem();
             this.Reset_Form = new System.Windows.Forms.ToolStripMenuItem();
             this.tb_dob = new System.Windows.Forms.TextBox();
-            this.combo_treatedfor = new System.Windows.Forms.ComboBox();
             this.button_populator = new System.Windows.Forms.Button();
             this.button_reset = new System.Windows.Forms.Button();
-            this.button_add_dx = new System.Windows.Forms.Button();
-            this.button_remove_dx = new System.Windows.Forms.Button();
+            this.button_addtreatedfor_dx = new System.Windows.Forms.Button();
+            this.button_removetreatedfor_dx = new System.Windows.Forms.Button();
             this.combo_medlist_A = new System.Windows.Forms.ComboBox();
             this.combo_purpose = new System.Windows.Forms.ComboBox();
             this.tb_name = new System.Windows.Forms.TextBox();
@@ -51,6 +50,7 @@
             this.listbox_subhx_dx = new System.Windows.Forms.ListBox();
             this.button_removesubhx_dx = new System.Windows.Forms.Button();
             this.button_addsubhx_dx = new System.Windows.Forms.Button();
+            this.combo_treatedfor = new System.Windows.Forms.ComboBox();
             this.Right_Click_Menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -102,17 +102,6 @@
             this.tb_dob.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_dob_KeyDown);
             this.tb_dob.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_dob_KeyPress);
             // 
-            // combo_treatedfor
-            // 
-            this.combo_treatedfor.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.combo_treatedfor.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.combo_treatedfor.FormattingEnabled = true;
-            this.combo_treatedfor.Location = new System.Drawing.Point(61, 332);
-            this.combo_treatedfor.Name = "combo_treatedfor";
-            this.combo_treatedfor.Size = new System.Drawing.Size(357, 32);
-            this.combo_treatedfor.TabIndex = 5;
-            this.combo_treatedfor.Text = "Patient is being treated for";
-            // 
             // button_populator
             // 
             this.button_populator.Location = new System.Drawing.Point(1238, 91);
@@ -132,23 +121,25 @@
             this.button_reset.UseVisualStyleBackColor = true;
             this.button_reset.Click += new System.EventHandler(this.button_reset_Click);
             // 
-            // button_add_dx
+            // button_addtreatedfor_dx
             // 
-            this.button_add_dx.Location = new System.Drawing.Point(462, 332);
-            this.button_add_dx.Name = "button_add_dx";
-            this.button_add_dx.Size = new System.Drawing.Size(136, 44);
-            this.button_add_dx.TabIndex = 6;
-            this.button_add_dx.Text = "Add Dx";
-            this.button_add_dx.UseVisualStyleBackColor = true;
+            this.button_addtreatedfor_dx.Location = new System.Drawing.Point(462, 332);
+            this.button_addtreatedfor_dx.Name = "button_addtreatedfor_dx";
+            this.button_addtreatedfor_dx.Size = new System.Drawing.Size(136, 44);
+            this.button_addtreatedfor_dx.TabIndex = 6;
+            this.button_addtreatedfor_dx.Text = "Add Dx";
+            this.button_addtreatedfor_dx.UseVisualStyleBackColor = true;
+            this.button_addtreatedfor_dx.Click += new System.EventHandler(this.button_addtreatedfor_dx_Click);
             // 
-            // button_remove_dx
+            // button_removetreatedfor_dx
             // 
-            this.button_remove_dx.Location = new System.Drawing.Point(462, 395);
-            this.button_remove_dx.Name = "button_remove_dx";
-            this.button_remove_dx.Size = new System.Drawing.Size(136, 44);
-            this.button_remove_dx.TabIndex = 7;
-            this.button_remove_dx.Text = "Remove Dx";
-            this.button_remove_dx.UseVisualStyleBackColor = true;
+            this.button_removetreatedfor_dx.Location = new System.Drawing.Point(462, 395);
+            this.button_removetreatedfor_dx.Name = "button_removetreatedfor_dx";
+            this.button_removetreatedfor_dx.Size = new System.Drawing.Size(136, 44);
+            this.button_removetreatedfor_dx.TabIndex = 7;
+            this.button_removetreatedfor_dx.Text = "Remove Dx";
+            this.button_removetreatedfor_dx.UseVisualStyleBackColor = true;
+            this.button_removetreatedfor_dx.Click += new System.EventHandler(this.button_removedtreatedfor_dx_Click);
             // 
             // combo_medlist_A
             // 
@@ -163,7 +154,7 @@
             // 
             // combo_purpose
             // 
-            this.combo_purpose.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.combo_purpose.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.combo_purpose.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.combo_purpose.FormattingEnabled = true;
             this.combo_purpose.Location = new System.Drawing.Point(548, 45);
@@ -260,6 +251,17 @@
             this.button_addsubhx_dx.Text = "Add Dx";
             this.button_addsubhx_dx.UseVisualStyleBackColor = true;
             // 
+            // combo_treatedfor
+            // 
+            this.combo_treatedfor.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.combo_treatedfor.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.combo_treatedfor.FormattingEnabled = true;
+            this.combo_treatedfor.Location = new System.Drawing.Point(61, 332);
+            this.combo_treatedfor.Name = "combo_treatedfor";
+            this.combo_treatedfor.Size = new System.Drawing.Size(357, 32);
+            this.combo_treatedfor.TabIndex = 5;
+            this.combo_treatedfor.Text = "The patient is treated for";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
@@ -267,6 +269,7 @@
             this.AutoScroll = true;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(2476, 1376);
+            this.Controls.Add(this.combo_treatedfor);
             this.Controls.Add(this.listbox_subhx_dx);
             this.Controls.Add(this.button_removesubhx_dx);
             this.Controls.Add(this.button_addsubhx_dx);
@@ -278,11 +281,10 @@
             this.Controls.Add(this.tb_name);
             this.Controls.Add(this.combo_purpose);
             this.Controls.Add(this.combo_medlist_A);
-            this.Controls.Add(this.button_remove_dx);
-            this.Controls.Add(this.button_add_dx);
+            this.Controls.Add(this.button_removetreatedfor_dx);
+            this.Controls.Add(this.button_addtreatedfor_dx);
             this.Controls.Add(this.button_reset);
             this.Controls.Add(this.button_populator);
-            this.Controls.Add(this.combo_treatedfor);
             this.Controls.Add(this.tb_dob);
             this.Controls.Add(this.mainbox);
             this.Name = "Form1";
@@ -303,11 +305,10 @@
         private System.Windows.Forms.ToolStripMenuItem Paste;
         private System.Windows.Forms.ToolStripMenuItem Reset_Form;
         private System.Windows.Forms.TextBox tb_dob;
-        private System.Windows.Forms.ComboBox combo_treatedfor;
         private System.Windows.Forms.Button button_populator;
         private System.Windows.Forms.Button button_reset;
-        private System.Windows.Forms.Button button_add_dx;
-        private System.Windows.Forms.Button button_remove_dx;
+        private System.Windows.Forms.Button button_addtreatedfor_dx;
+        private System.Windows.Forms.Button button_removetreatedfor_dx;
         private System.Windows.Forms.ComboBox combo_medlist_A;
         private System.Windows.Forms.ComboBox combo_purpose;
         private System.Windows.Forms.TextBox tb_name;
@@ -319,6 +320,7 @@
         private System.Windows.Forms.ListBox listbox_subhx_dx;
         private System.Windows.Forms.Button button_removesubhx_dx;
         private System.Windows.Forms.Button button_addsubhx_dx;
+        private System.Windows.Forms.ComboBox combo_treatedfor;
     }
 }
 
