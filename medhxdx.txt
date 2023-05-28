@@ -1,0 +1,44 @@
+﻿HTN
+HLP
+DM T2
+cLBP
+Hypertension
+Hyperlipidemia
+Diabetes Type 2
+Chronic Lower Back Pain
+Chronic Neuropathy
+Neuropathy
+Dementia
+Cirrhosis
+Hepatitis B
+Hepatitis C
+Renal Disease
+s/p MI
+CAD
+s/p Stroke
+CVD
+Pregnancy
+Miscarriage
+Psoriasis
+Arthritis
+Osteoarthritis
+Rheumatoid Arthritis
+Seizures
+Seizure Disorder
+Epilepsy
+Osteomalacia
+Osteoporosis
+Hypothyroidism
+Hyperthyroidism
+CHF
+Vision Loss
+Blindness
+Hearing Loss
+Left-sided hearing loss
+Right-sided hearing loss
+IBS
+Irritiable Bowel Syndrome
+IBD
+Inflammatory Bowel Disease
+Cancer
+Lupis

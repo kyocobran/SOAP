@@ -42,7 +42,6 @@ Celexa 35mg
 Celexa 40mg
 Citalopram
 Citalopram 5mg
-Citalopram 7.5mg
 Citalopram 10mg
 Citalopram 15mg
 Citalopram 20mg
@@ -86,12 +85,39 @@ Cymbalta 60mg
 Cymbalta 90mg
 Cymbalta 120mg
 Duloxetine
+Duloxetine 20mg
+Duloxetine 30mg
+Duloxetine 60mg
+Duloxetine 90mg
+Duloxetine 120mg
 Paxil
 Paroxetine
 Gabapentin
+Gabapentin 100mg
+Gabapentin 200mg
+Gabapentin 300mg
+Gabapentin 600mg
+Gabapentin 800mg
+Gabapentin 900mg
 Propranolol
 Abilify
+Abilify 2mg
+Abilify 2.5mg
+Abilify 5mg
+Abilify 10mg
+Abilify 15mg
+Abilify 20mg
+Abilify 25mg
+Abilify 30mg
 Aripiprazole
+Aripiprazole 2mg
+Aripiprazole 2.5mg
+Aripiprazole 5mg
+Aripiprazole 10mg
+Aripiprazole 15mg
+Aripiprazole 20mg
+Aripiprazole 25mg
+Aripiprazole 30mg
 Zyprexa
 Olanzapine
 Risperdal
@@ -105,13 +131,46 @@ Seroquel
 Clozaril
 Clozapine
 Modafinil
+Adderall
+Ritalin
+Strattera
+Qelbree
 Diphenhydramine
+Cogentin
 Benadryl
 Hydroxyzine
+Hydroxyzine 10mg
+Hydroxyxine 25mg
+Hydroxyzine 50mg
+Hydroxyzine 100mg
 Vistaril
+Vistaril 10mg
+Vistaril 25mg
+Vistaril 50mg
+Vistaril 100mg
 Atarax
+Atarax 10mg
+Atarax 25mg
+Atarax 50mg
+Atarax 100mg
 Lamictal
+Lamictal 12.5mg
+Lamictal 25mg
+Lamictal 50mg
+Lamictal 100mg
+Lamictal 150mg
+Lamictal 200mg
 Lamotrigine
+Lamotrigine 12.5mg
+Lamotrigine 25mg
+Lamotrigine 50mg
+Lamotrigine 100mg
+Lamotrigine 150mg
+Lamotrigine 200mg
 Depakote
 Valproate
-Lithium
+Lithium 
+Lithium 300mg
+Lithium 600mg 
+Lithium 900mg 
+Lithium 1200mg
