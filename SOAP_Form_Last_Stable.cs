@@ -16,16 +16,12 @@ namespace SOAP
 
     public partial class Form1 : Form
     {
-<<<<<<< Updated upstream
-        
-=======
         //DECLARE INITIAL VARIABLES FOR RESET FUNCTION
         private string Initial_tb_name;
         private string Initial_tb_dob;
         private string Initial_combo_gender;
         private string Initial_combo_purpose;
         private string Initial_label_age;
->>>>>>> Stashed changes
 
         public Form1()
         {
@@ -107,26 +103,8 @@ namespace SOAP
             {
                 string input = tb_dob.Text.Trim();
 
-<<<<<<< Updated upstream
-        private void button_add_dx_Click(object sender, EventArgs e)
-        {
-            tb_treatedfor_box.AppendText(combo_treatedfor.Text + Environment.NewLine);
-            combo_treatedfor.Text = "";
-            
-        }
-
-        private void button_remove_dx_Click(object sender, EventArgs e)
-        {
-            string text = tb_treatedfor_box.Text;
-            if (!string.IsNullOrEmpty(text))
-            {
-                // Split the text into lines
-                string[] lines = text.Split(new string[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
-                if (lines.Length > 0)
-=======
                 DateTime dob;
                 if (DateTime.TryParse(input, out dob))
->>>>>>> Stashed changes
                 {
                     tb_dob.Text = dob.ToString("MM/dd/yyyy");
 
@@ -151,44 +129,6 @@ namespace SOAP
                 e.Handled = true;
             }
         }
-<<<<<<< Updated upstream
-        
-
-        private void button_populator_Click(object sender, EventArgs e)
-        {
-            // Get the values from the input controls
-            string age = tb_pt_age.Text;
-            string gender = combo_gender.Text;
-            string purpose = combo_purpose.Text;
-            string treatedFor = tb_treatedfor_box.Text;
-
-            // Combine the values into a single string
-            string result = $"Patient Age: {age}\r\nGender: {gender}\r\nPurpose of Visit: {purpose}\r\n\r\nPatient is treated for:\r\n{treatedFor}";
-
-            // Set the combined string as the text of the mainbox textbox
-            mainbox.Text = result;
-        }
-
-        private void ResetForm()
-        {
-            // Reset the patient age textbox
-            tb_pt_age.Text = "Pt age";
-
-            // Reset the gender combo box
-            combo_gender.Text = "Gender";
-
-            // Reset the purpose combo box
-            combo_purpose.Text = "Purpose of Visit";
-
-            // Reset the treatedfor combo box
-            combo_treatedfor.Text = "The patient is being treated for";
-
-            // Reset the treated for textbox
-            tb_treatedfor_box.Text = string.Empty;
-
-            // Clear the main textbox
-            mainbox.Text = string.Empty;
-=======
 
         private int CalculateAge(DateTime dateOfBirth)
         {
@@ -199,7 +139,6 @@ namespace SOAP
                 age--;
             }
             return age;
->>>>>>> Stashed changes
         }
         //ABOVE: SETS UP THE DOB text box to except numbers mainly and covert to mm/dd/yyyy format
         //
@@ -213,9 +152,5 @@ namespace SOAP
             label_age.Text = Initial_label_age;
         }
 
-<<<<<<< Updated upstream
-        
-=======
->>>>>>> Stashed changes
     }
 }
