@@ -26,6 +26,7 @@ namespace SOAP
         private string Initial_combo_treatedfor;
         private string Initial_combo_subhx_dx;
         private string Initial_combo_medhxdx;
+        private string Initial_combo_psychmeds;
 
         //declare initial variable for listbox_treatedfor
         private List<string> Initial_listbox_treatedfor_items;
@@ -35,6 +36,9 @@ namespace SOAP
 
         //declare initial variable for listbox_medhxdx
         private List<string> Initial_listbox_medhxdx_items;
+
+        //declare initial variable for listbox_psychmeds
+        private List<string> Initial_listbox_psychmeds_items;
 
         public Form1()
         {
@@ -50,6 +54,7 @@ namespace SOAP
             Initial_combo_treatedfor = combo_treatedfor.Text;
             Initial_combo_subhx_dx = combo_subhx_dx.Text;
             Initial_combo_medhxdx = combo_medhxdx.Text;
+            Initial_combo_psychmeds = combo_psychmeds.Text;
 
             // Store the initial values for listbox_treatedfor
             Initial_listbox_treatedfor_items = new List<string>();
@@ -72,6 +77,12 @@ namespace SOAP
                 Initial_listbox_medhxdx_items.Add(medhxdx_item);
             }
 
+            // Store the initial values for listbox_psychmeds
+            Initial_listbox_psychmeds_items = new List<string>();
+            foreach (string psychmeds_item in listbox_psychmeds.Items)
+            {
+                Initial_listbox_psychmeds_items.Add(psychmeds_item);
+            }
 
             //ATTACH TEXT LIST TO RESPECTIVE COMBO BOXES
             string[] genderlist = File.ReadAllLines("gender.txt");
@@ -88,6 +99,9 @@ namespace SOAP
 
             string[] medhxdxlist = File.ReadAllLines("medhxdx.txt");
             combo_medhxdx.Items.AddRange(medhxdxlist);
+
+            string[] psychmedlist = File.ReadAllLines("medlist.txt");
+            combo_psychmeds.Items.AddRange(psychmedlist);
 
 
 
@@ -260,6 +274,58 @@ namespace SOAP
 
 
 
+        //
+        //FOR POPULATING THE COMBO_PSYCHMEDS LISTBOX
+        //allow for pressing enter in the combo treated for box
+        private void combo_psychmeds_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                string psychmeds_med = combo_psychmeds.Text.Trim();
+
+                if (!string.IsNullOrEmpty(psychmeds_med))
+                {
+                    AddPsychMedsListBox(psychmeds_med);
+                }
+
+                e.Handled = true;
+            }
+        }
+
+        //allows for pressing the addtreatedfor_dx button
+        private void button_addpsychmeds_Click(object sender, EventArgs e)
+        {
+            string psychmeds_med = combo_psychmeds.Text.Trim();
+
+            if (!string.IsNullOrEmpty(psychmeds_med))
+            {
+                AddPsychMedsListBox(psychmeds_med);
+            }
+        }
+
+        //method for actually adding diagnoses
+        private void AddPsychMedsListBox(string psychmeds_med)
+        {
+            if (!listbox_psychmeds.Items.Contains(psychmeds_med))
+            {
+                listbox_psychmeds.Items.Add(psychmeds_med);
+            }
+
+            combo_psychmeds.Text = string.Empty;
+        }
+
+        //allows for removing a highlighted diagnosis from listbox_psychmeds
+        private void button_removedpsychmeds_Click(object sender, EventArgs e)
+        {
+            if (listbox_psychmeds.SelectedIndex != -1)
+            {
+                listbox_psychmeds.Items.RemoveAt(listbox_psychmeds.SelectedIndex);
+            }
+        }
+        //ABOVE
+        //
+
+
 
         //
         //SETS UP THE DOB text box to except numbers mainly and covert to mm/dd/yyyy format
@@ -334,6 +400,7 @@ namespace SOAP
         //ABOVE: SETS UP THE DOB text box to except numbers mainly and covert to mm/dd/yyyy format
         //
 
+
         //Reset the form to it's initialized state
         private void button_reset_Click(object sender, EventArgs e)
         {
@@ -345,6 +412,7 @@ namespace SOAP
             combo_treatedfor.Text = Initial_combo_treatedfor;
             combo_subhx_dx.Text = Initial_combo_subhx_dx;
             combo_medhxdx.Text = Initial_combo_medhxdx;
+            combo_psychmeds.Text = Initial_combo_psychmeds;
 
             //changes the listbox_treatedfor to its original state
             listbox_treatedfor.Items.Clear();
@@ -366,7 +434,15 @@ namespace SOAP
             {
                 listbox_medhxdx.Items.Add(medhxdx_item);
             }
+
+            //changes the listbox_psychmeds to its original state
+            listbox_psychmeds.Items.Clear();
+            foreach (string psychmeds_item in Initial_listbox_psychmeds_items)
+            {
+                listbox_psychmeds.Items.Add(psychmeds_item);
+            }
         }
 
+        
     }
 }

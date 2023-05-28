@@ -55,6 +55,10 @@
             this.button_addmedhxdx = new System.Windows.Forms.Button();
             this.combo_medhxdx = new System.Windows.Forms.ComboBox();
             this.mainbox = new System.Windows.Forms.TextBox();
+            this.listbox_psychmeds = new System.Windows.Forms.ListBox();
+            this.button_removepsychmeds = new System.Windows.Forms.Button();
+            this.button_addpsychmeds = new System.Windows.Forms.Button();
+            this.combo_psychmeds = new System.Windows.Forms.ComboBox();
             this.Right_Click_Menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -141,7 +145,7 @@
             this.combo_medlist_A.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.combo_medlist_A.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.combo_medlist_A.FormattingEnabled = true;
-            this.combo_medlist_A.Location = new System.Drawing.Point(61, 960);
+            this.combo_medlist_A.Location = new System.Drawing.Point(48, 1148);
             this.combo_medlist_A.Name = "combo_medlist_A";
             this.combo_medlist_A.Size = new System.Drawing.Size(332, 32);
             this.combo_medlist_A.TabIndex = 12;
@@ -201,7 +205,7 @@
             // 
             // combo_subhx_dx
             // 
-            this.combo_subhx_dx.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.combo_subhx_dx.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.combo_subhx_dx.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.combo_subhx_dx.FormattingEnabled = true;
             this.combo_subhx_dx.Location = new System.Drawing.Point(61, 560);
@@ -292,7 +296,7 @@
             // 
             // combo_medhxdx
             // 
-            this.combo_medhxdx.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.combo_medhxdx.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.combo_medhxdx.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.combo_medhxdx.FormattingEnabled = true;
             this.combo_medhxdx.Location = new System.Drawing.Point(61, 753);
@@ -310,6 +314,47 @@
             this.mainbox.Size = new System.Drawing.Size(725, 830);
             this.mainbox.TabIndex = 252;
             // 
+            // listbox_psychmeds
+            // 
+            this.listbox_psychmeds.FormattingEnabled = true;
+            this.listbox_psychmeds.ItemHeight = 24;
+            this.listbox_psychmeds.Location = new System.Drawing.Point(624, 935);
+            this.listbox_psychmeds.Name = "listbox_psychmeds";
+            this.listbox_psychmeds.Size = new System.Drawing.Size(316, 100);
+            this.listbox_psychmeds.TabIndex = 20;
+            // 
+            // button_removepsychmeds
+            // 
+            this.button_removepsychmeds.Location = new System.Drawing.Point(462, 998);
+            this.button_removepsychmeds.Name = "button_removepsychmeds";
+            this.button_removepsychmeds.Size = new System.Drawing.Size(136, 44);
+            this.button_removepsychmeds.TabIndex = 19;
+            this.button_removepsychmeds.Text = "Remove Med";
+            this.button_removepsychmeds.UseVisualStyleBackColor = true;
+            this.button_removepsychmeds.Click += new System.EventHandler(this.button_removedpsychmeds_Click);
+            // 
+            // button_addpsychmeds
+            // 
+            this.button_addpsychmeds.Location = new System.Drawing.Point(462, 935);
+            this.button_addpsychmeds.Name = "button_addpsychmeds";
+            this.button_addpsychmeds.Size = new System.Drawing.Size(136, 44);
+            this.button_addpsychmeds.TabIndex = 18;
+            this.button_addpsychmeds.Text = "Add Med";
+            this.button_addpsychmeds.UseVisualStyleBackColor = true;
+            this.button_addpsychmeds.Click += new System.EventHandler(this.button_addpsychmeds_Click);
+            // 
+            // combo_psychmeds
+            // 
+            this.combo_psychmeds.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.combo_psychmeds.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.combo_psychmeds.FormattingEnabled = true;
+            this.combo_psychmeds.Location = new System.Drawing.Point(61, 935);
+            this.combo_psychmeds.Name = "combo_psychmeds";
+            this.combo_psychmeds.Size = new System.Drawing.Size(357, 32);
+            this.combo_psychmeds.TabIndex = 17;
+            this.combo_psychmeds.Text = "Psych meds prescribed by us";
+            this.combo_psychmeds.KeyDown += new System.Windows.Forms.KeyEventHandler(this.combo_psychmeds_KeyDown);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
@@ -317,6 +362,10 @@
             this.AutoScroll = true;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(2476, 1376);
+            this.Controls.Add(this.listbox_psychmeds);
+            this.Controls.Add(this.button_removepsychmeds);
+            this.Controls.Add(this.button_addpsychmeds);
+            this.Controls.Add(this.combo_psychmeds);
             this.Controls.Add(this.mainbox);
             this.Controls.Add(this.listbox_medhxdx);
             this.Controls.Add(this.button_removemedhxdx);
@@ -376,6 +425,10 @@
         private System.Windows.Forms.Button button_addmedhxdx;
         private System.Windows.Forms.ComboBox combo_medhxdx;
         private System.Windows.Forms.TextBox mainbox;
+        private System.Windows.Forms.ListBox listbox_psychmeds;
+        private System.Windows.Forms.Button button_removepsychmeds;
+        private System.Windows.Forms.Button button_addpsychmeds;
+        private System.Windows.Forms.ComboBox combo_psychmeds;
     }
 }
 
