@@ -1,0 +1,49 @@
+﻿Atorvastatin
+Simvastatin
+Losartan
+Lisinopril
+Metformin
+Semaglutide
+Ozempic
+Metoprolol
+Synthroid
+Levothyroxyzine
+Ativan
+Lorazepam
+Xanax
+Alprazolam
+Klonopin
+Clonazepam
+Valium
+Diazepam
+Librium
+Iron
+MVI
+Multivitamin
+Vitamin D
+Plavix
+Clopidogrel
+Aspirin
+Ibuprofen PRN
+Naproxen PRN
+Imitrex
+Norco 5mg/325mg
+Hydrocodone 5mg
+Norco 10mg/325mg
+Hydrocodone 10mg
+Tramadol
+Zolpidem
+Ambien
+Augmentin
+Amoxicillin
+Azithromycin
+Doxycycline
+Senna
+Docusate
+Miralax
+Immodium
+Loperamide
+Tylenol PRN
+Zofran
+Ondansetron
+

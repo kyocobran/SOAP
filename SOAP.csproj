@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{50F9DD14-FD80-48A4-B54C-03627A34E67C}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>SOAP</RootNamespace>
-    <AssemblyName>SOAP</AssemblyName>
+    <RootNamespace>MD_SOAP</RootNamespace>
+    <AssemblyName>MD SOAP</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -65,6 +65,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="SOAP_Form_Last_Stable.resx">
       <DependentUpon>SOAP_Form_Last_Stable.cs</DependentUpon>
@@ -90,6 +91,9 @@
     <Content Include="medlist.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="othermedlist.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="psychdiagnosis.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -105,6 +109,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Debug\" />
+    <Folder Include="Patient Data Files\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(ProjectDir)Patient Data Files" "$(TargetDir)Patient Data Files" /E /I /Y</PostBuildEvent>
+  </PropertyGroup>
 </Project>

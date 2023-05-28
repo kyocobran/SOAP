@@ -28,6 +28,7 @@ namespace SOAP
         private string Initial_combo_subhx_dx;
         private string Initial_combo_medhxdx;
         private string Initial_combo_psychmeds;
+        private string Initial_combo_othermeds;
 
         //declare initial variable for listbox_treatedfor
         private List<string> Initial_listbox_treatedfor_items;
@@ -40,6 +41,9 @@ namespace SOAP
 
         //declare initial variable for listbox_psychmeds
         private List<string> Initial_listbox_psychmeds_items;
+
+        //declare initial variable for listbox_othermeds
+        private List<string> Initial_listbox_othermeds_items;
 
         public Form1()
         {
@@ -56,6 +60,7 @@ namespace SOAP
             Initial_combo_subhx_dx = combo_subhx_dx.Text;
             Initial_combo_medhxdx = combo_medhxdx.Text;
             Initial_combo_psychmeds = combo_psychmeds.Text;
+            Initial_combo_othermeds = combo_othermeds.Text;
 
             // Store the initial values for listbox_treatedfor
             Initial_listbox_treatedfor_items = new List<string>();
@@ -85,6 +90,13 @@ namespace SOAP
                 Initial_listbox_psychmeds_items.Add(psychmeds_item);
             }
 
+            // Store the initial values for listbox_othermeds
+            Initial_listbox_othermeds_items = new List<string>();
+            foreach (string othermeds_item in listbox_othermeds.Items)
+            {
+                Initial_listbox_othermeds_items.Add(othermeds_item);
+            }
+
             //ATTACH TEXT LIST TO RESPECTIVE COMBO BOXES
             string[] genderlist = File.ReadAllLines("gender.txt");
             combo_gender.Items.AddRange(genderlist);
@@ -104,7 +116,8 @@ namespace SOAP
             string[] psychmedlist = File.ReadAllLines("medlist.txt");
             combo_psychmeds.Items.AddRange(psychmedlist);
 
-
+            string[] othermedlist = File.ReadAllLines("othermedlist.txt");
+            combo_othermeds.Items.AddRange(othermedlist);
 
         }
 
@@ -166,7 +179,7 @@ namespace SOAP
                 listbox_treatedfor.Items.RemoveAt(listbox_treatedfor.SelectedIndex);
             }
         }
-        //ABOVE
+        //ABOVE TREATEDFOR
         //
 
 
@@ -218,12 +231,12 @@ namespace SOAP
                 listbox_subhx_dx.Items.RemoveAt(listbox_subhx_dx.SelectedIndex);
             }
         }
-        //ABOVE
+        //ABOVE SUBHX_DX
         //
 
 
         //
-        //FOR POPULATING THE COMBO_TREATEDFOR LISTBOX
+        //FOR POPULATING THE COMBO_MEDHXDX LISTBOX
         //allow for pressing enter in the combo treated for box
         private void combo_medhxdx_KeyDown(object sender, KeyEventArgs e)
         {
@@ -240,7 +253,7 @@ namespace SOAP
             }
         }
 
-        //allows for pressing the addtreatedfor_dx button
+        //allows for pressing the addmedhx_dx button
         private void button_addmedhxdx_Click(object sender, EventArgs e)
         {
             string medhxdx_diagnosis = combo_medhxdx.Text.Trim();
@@ -270,7 +283,7 @@ namespace SOAP
                 listbox_medhxdx.Items.RemoveAt(listbox_medhxdx.SelectedIndex);
             }
         }
-        //ABOVE
+        //ABOVE MEDHXDX UNIT
         //
 
 
@@ -293,7 +306,7 @@ namespace SOAP
             }
         }
 
-        //allows for pressing the addtreatedfor_dx button
+        //allows for pressing the addpsychmeds_dx button
         private void button_addpsychmeds_Click(object sender, EventArgs e)
         {
             string psychmeds_med = combo_psychmeds.Text.Trim();
@@ -323,9 +336,59 @@ namespace SOAP
                 listbox_psychmeds.Items.RemoveAt(listbox_psychmeds.SelectedIndex);
             }
         }
-        //ABOVE
+        //ABOVE PSYCHMEDS UNIT
         //
 
+        //
+        //FOR POPULATING THE COMBO_OTHERMEDS LISTBOX
+        //allow for pressing enter in the combo treated for box
+        private void combo_othermeds_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                string psychmeds_med = combo_othermeds.Text.Trim();
+
+                if (!string.IsNullOrEmpty(psychmeds_med))
+                {
+                    AddOtherMedsListBox(psychmeds_med);
+                }
+
+                e.Handled = true;
+            }
+        }
+
+        //allows for pressing the addtreatedfor_dx button
+        private void button_addothermeds_Click(object sender, EventArgs e)
+        {
+            string psychmeds_med = combo_othermeds.Text.Trim();
+
+            if (!string.IsNullOrEmpty(psychmeds_med))
+            {
+                AddOtherMedsListBox(psychmeds_med);
+            }
+        }
+
+        //method for actually adding diagnoses
+        private void AddOtherMedsListBox(string psychmeds_med)
+        {
+            if (!listbox_othermeds.Items.Contains(psychmeds_med))
+            {
+                listbox_othermeds.Items.Add(psychmeds_med);
+            }
+
+            combo_othermeds.Text = string.Empty;
+        }
+
+        //allows for removing a highlighted diagnosis from listbox_othermeds
+        private void button_removedothermeds_Click(object sender, EventArgs e)
+        {
+            if (listbox_othermeds.SelectedIndex != -1)
+            {
+                listbox_othermeds.Items.RemoveAt(listbox_othermeds.SelectedIndex);
+            }
+        }
+        //ABOVE OTHERMEDS UNIT
+        //
 
 
         //
@@ -443,6 +506,7 @@ namespace SOAP
             combo_subhx_dx.Text = Initial_combo_subhx_dx;
             combo_medhxdx.Text = Initial_combo_medhxdx;
             combo_psychmeds.Text = Initial_combo_psychmeds;
+            combo_othermeds.Text = Initial_combo_othermeds;
 
             //changes the listbox_treatedfor to its original state
             listbox_treatedfor.Items.Clear();
@@ -471,6 +535,13 @@ namespace SOAP
             {
                 listbox_psychmeds.Items.Add(psychmeds_item);
             }
+
+            //changes the listbox_othermeds to its original state
+            listbox_othermeds.Items.Clear();
+            foreach (string othermeds_item in Initial_listbox_othermeds_items)
+            {
+                listbox_othermeds.Items.Add(othermeds_item);
+            }
         }
 
         //
@@ -486,6 +557,7 @@ namespace SOAP
             public List<string> subhx_dx_items_Data { get; set; }
             public List<string> medhxdx_items_Data { get; set; }
             public List<string> psychmeds_items_Data { get; set; }
+            public List<string> othermeds_items_Data { get; set; }
             // Add other properties for remaining controls
         }
 
@@ -504,6 +576,7 @@ namespace SOAP
                 subhx_dx_items_Data = listbox_subhx_dx.Items.Cast<string>().ToList(),
                 medhxdx_items_Data = listbox_medhxdx.Items.Cast<string>().ToList(),
                 psychmeds_items_Data = listbox_psychmeds.Items.Cast<string>().ToList(),
+                othermeds_items_Data = listbox_othermeds.Items.Cast<string>().ToList(),
                 // Add other properties for remaining controls
             };
 
@@ -565,10 +638,11 @@ namespace SOAP
                     listbox_medhxdx.Items.AddRange(patientData.medhxdx_items_Data.ToArray());
                     listbox_psychmeds.Items.Clear();
                     listbox_psychmeds.Items.AddRange(patientData.psychmeds_items_Data.ToArray());
-
+                    listbox_othermeds.Items.Clear();
+                    listbox_othermeds.Items.AddRange(patientData.othermeds_items_Data.ToArray());
                     // Add code to populate other form controls as 
 
-                    
+
                     // Calculate age based on loaded DOB
                     DateTime dob;
                     if (DateTime.TryParseExact(patientData.dob_Data, new[] { "MM/dd/yyyy" }, CultureInfo.InvariantCulture, DateTimeStyles.None, out dob))

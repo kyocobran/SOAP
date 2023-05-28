@@ -62,6 +62,10 @@
             this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
             this.button_saveptdata = new System.Windows.Forms.Button();
             this.button_loadptdata = new System.Windows.Forms.Button();
+            this.listbox_othermeds = new System.Windows.Forms.ListBox();
+            this.button_removeothermeds = new System.Windows.Forms.Button();
+            this.button_addothermeds = new System.Windows.Forms.Button();
+            this.combo_othermeds = new System.Windows.Forms.ComboBox();
             this.Right_Click_Menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -149,10 +153,10 @@
             this.combo_medlist_A.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.combo_medlist_A.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.combo_medlist_A.FormattingEnabled = true;
-            this.combo_medlist_A.Location = new System.Drawing.Point(48, 1148);
+            this.combo_medlist_A.Location = new System.Drawing.Point(37, 1301);
             this.combo_medlist_A.Name = "combo_medlist_A";
             this.combo_medlist_A.Size = new System.Drawing.Size(332, 32);
-            this.combo_medlist_A.TabIndex = 12;
+            this.combo_medlist_A.TabIndex = 67;
             this.combo_medlist_A.Text = "Patient is taking";
             // 
             // combo_purpose
@@ -212,7 +216,7 @@
             this.combo_subhx_dx.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.combo_subhx_dx.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.combo_subhx_dx.FormattingEnabled = true;
-            this.combo_subhx_dx.Location = new System.Drawing.Point(61, 560);
+            this.combo_subhx_dx.Location = new System.Drawing.Point(61, 520);
             this.combo_subhx_dx.Name = "combo_subhx_dx";
             this.combo_subhx_dx.Size = new System.Drawing.Size(357, 32);
             this.combo_subhx_dx.TabIndex = 9;
@@ -232,14 +236,14 @@
             // 
             this.listbox_subhx_dx.FormattingEnabled = true;
             this.listbox_subhx_dx.ItemHeight = 24;
-            this.listbox_subhx_dx.Location = new System.Drawing.Point(624, 560);
+            this.listbox_subhx_dx.Location = new System.Drawing.Point(624, 520);
             this.listbox_subhx_dx.Name = "listbox_subhx_dx";
             this.listbox_subhx_dx.Size = new System.Drawing.Size(316, 100);
             this.listbox_subhx_dx.TabIndex = 12;
             // 
             // button_removesubhx_dx
             // 
-            this.button_removesubhx_dx.Location = new System.Drawing.Point(462, 623);
+            this.button_removesubhx_dx.Location = new System.Drawing.Point(462, 583);
             this.button_removesubhx_dx.Name = "button_removesubhx_dx";
             this.button_removesubhx_dx.Size = new System.Drawing.Size(136, 44);
             this.button_removesubhx_dx.TabIndex = 11;
@@ -249,7 +253,7 @@
             // 
             // button_addsubhx_dx
             // 
-            this.button_addsubhx_dx.Location = new System.Drawing.Point(462, 560);
+            this.button_addsubhx_dx.Location = new System.Drawing.Point(462, 520);
             this.button_addsubhx_dx.Name = "button_addsubhx_dx";
             this.button_addsubhx_dx.Size = new System.Drawing.Size(136, 44);
             this.button_addsubhx_dx.TabIndex = 10;
@@ -273,14 +277,14 @@
             // 
             this.listbox_medhxdx.FormattingEnabled = true;
             this.listbox_medhxdx.ItemHeight = 24;
-            this.listbox_medhxdx.Location = new System.Drawing.Point(624, 753);
+            this.listbox_medhxdx.Location = new System.Drawing.Point(624, 713);
             this.listbox_medhxdx.Name = "listbox_medhxdx";
             this.listbox_medhxdx.Size = new System.Drawing.Size(316, 100);
             this.listbox_medhxdx.TabIndex = 16;
             // 
             // button_removemedhxdx
             // 
-            this.button_removemedhxdx.Location = new System.Drawing.Point(462, 816);
+            this.button_removemedhxdx.Location = new System.Drawing.Point(462, 776);
             this.button_removemedhxdx.Name = "button_removemedhxdx";
             this.button_removemedhxdx.Size = new System.Drawing.Size(136, 44);
             this.button_removemedhxdx.TabIndex = 15;
@@ -290,7 +294,7 @@
             // 
             // button_addmedhxdx
             // 
-            this.button_addmedhxdx.Location = new System.Drawing.Point(462, 753);
+            this.button_addmedhxdx.Location = new System.Drawing.Point(462, 713);
             this.button_addmedhxdx.Name = "button_addmedhxdx";
             this.button_addmedhxdx.Size = new System.Drawing.Size(136, 44);
             this.button_addmedhxdx.TabIndex = 14;
@@ -303,7 +307,7 @@
             this.combo_medhxdx.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.combo_medhxdx.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.combo_medhxdx.FormattingEnabled = true;
-            this.combo_medhxdx.Location = new System.Drawing.Point(61, 753);
+            this.combo_medhxdx.Location = new System.Drawing.Point(61, 713);
             this.combo_medhxdx.Name = "combo_medhxdx";
             this.combo_medhxdx.Size = new System.Drawing.Size(357, 32);
             this.combo_medhxdx.TabIndex = 13;
@@ -322,16 +326,16 @@
             // 
             this.listbox_psychmeds.FormattingEnabled = true;
             this.listbox_psychmeds.ItemHeight = 24;
-            this.listbox_psychmeds.Location = new System.Drawing.Point(624, 935);
+            this.listbox_psychmeds.Location = new System.Drawing.Point(624, 895);
             this.listbox_psychmeds.Name = "listbox_psychmeds";
             this.listbox_psychmeds.Size = new System.Drawing.Size(316, 100);
             this.listbox_psychmeds.TabIndex = 20;
             // 
             // button_removepsychmeds
             // 
-            this.button_removepsychmeds.Location = new System.Drawing.Point(462, 998);
+            this.button_removepsychmeds.Location = new System.Drawing.Point(462, 958);
             this.button_removepsychmeds.Name = "button_removepsychmeds";
-            this.button_removepsychmeds.Size = new System.Drawing.Size(136, 44);
+            this.button_removepsychmeds.Size = new System.Drawing.Size(148, 44);
             this.button_removepsychmeds.TabIndex = 19;
             this.button_removepsychmeds.Text = "Remove Med";
             this.button_removepsychmeds.UseVisualStyleBackColor = true;
@@ -339,9 +343,9 @@
             // 
             // button_addpsychmeds
             // 
-            this.button_addpsychmeds.Location = new System.Drawing.Point(462, 935);
+            this.button_addpsychmeds.Location = new System.Drawing.Point(462, 895);
             this.button_addpsychmeds.Name = "button_addpsychmeds";
-            this.button_addpsychmeds.Size = new System.Drawing.Size(136, 44);
+            this.button_addpsychmeds.Size = new System.Drawing.Size(148, 44);
             this.button_addpsychmeds.TabIndex = 18;
             this.button_addpsychmeds.Text = "Add Med";
             this.button_addpsychmeds.UseVisualStyleBackColor = true;
@@ -352,7 +356,7 @@
             this.combo_psychmeds.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.combo_psychmeds.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.combo_psychmeds.FormattingEnabled = true;
-            this.combo_psychmeds.Location = new System.Drawing.Point(61, 935);
+            this.combo_psychmeds.Location = new System.Drawing.Point(61, 895);
             this.combo_psychmeds.Name = "combo_psychmeds";
             this.combo_psychmeds.Size = new System.Drawing.Size(357, 32);
             this.combo_psychmeds.TabIndex = 17;
@@ -362,9 +366,9 @@
             // vScrollBar1
             // 
             this.vScrollBar1.Enabled = false;
-            this.vScrollBar1.Location = new System.Drawing.Point(1977, 9);
+            this.vScrollBar1.Location = new System.Drawing.Point(2410, 20);
             this.vScrollBar1.Name = "vScrollBar1";
-            this.vScrollBar1.Size = new System.Drawing.Size(36, 1479);
+            this.vScrollBar1.Size = new System.Drawing.Size(36, 1552);
             this.vScrollBar1.TabIndex = 253;
             // 
             // button_saveptdata
@@ -387,6 +391,47 @@
             this.button_loadptdata.UseVisualStyleBackColor = true;
             this.button_loadptdata.Click += new System.EventHandler(this.button_loadptdata_Click);
             // 
+            // listbox_othermeds
+            // 
+            this.listbox_othermeds.FormattingEnabled = true;
+            this.listbox_othermeds.ItemHeight = 24;
+            this.listbox_othermeds.Location = new System.Drawing.Point(624, 1069);
+            this.listbox_othermeds.Name = "listbox_othermeds";
+            this.listbox_othermeds.Size = new System.Drawing.Size(316, 100);
+            this.listbox_othermeds.TabIndex = 24;
+            // 
+            // button_removeothermeds
+            // 
+            this.button_removeothermeds.Location = new System.Drawing.Point(462, 1132);
+            this.button_removeothermeds.Name = "button_removeothermeds";
+            this.button_removeothermeds.Size = new System.Drawing.Size(148, 44);
+            this.button_removeothermeds.TabIndex = 23;
+            this.button_removeothermeds.Text = "Remove Med";
+            this.button_removeothermeds.UseVisualStyleBackColor = true;
+            this.button_removeothermeds.Click += new System.EventHandler(this.button_removedothermeds_Click);
+            // 
+            // button_addothermeds
+            // 
+            this.button_addothermeds.Location = new System.Drawing.Point(462, 1069);
+            this.button_addothermeds.Name = "button_addothermeds";
+            this.button_addothermeds.Size = new System.Drawing.Size(148, 44);
+            this.button_addothermeds.TabIndex = 22;
+            this.button_addothermeds.Text = "Add Med";
+            this.button_addothermeds.UseVisualStyleBackColor = true;
+            this.button_addothermeds.Click += new System.EventHandler(this.button_addothermeds_Click);
+            // 
+            // combo_othermeds
+            // 
+            this.combo_othermeds.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.combo_othermeds.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.combo_othermeds.FormattingEnabled = true;
+            this.combo_othermeds.Location = new System.Drawing.Point(61, 1069);
+            this.combo_othermeds.Name = "combo_othermeds";
+            this.combo_othermeds.Size = new System.Drawing.Size(357, 32);
+            this.combo_othermeds.TabIndex = 21;
+            this.combo_othermeds.Text = "Other meds not prescribed by us";
+            this.combo_othermeds.KeyDown += new System.Windows.Forms.KeyEventHandler(this.combo_othermeds_KeyDown);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
@@ -394,6 +439,10 @@
             this.AutoScroll = true;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(2476, 1376);
+            this.Controls.Add(this.listbox_othermeds);
+            this.Controls.Add(this.button_removeothermeds);
+            this.Controls.Add(this.button_addothermeds);
+            this.Controls.Add(this.combo_othermeds);
             this.Controls.Add(this.button_loadptdata);
             this.Controls.Add(this.button_saveptdata);
             this.Controls.Add(this.vScrollBar1);
@@ -425,7 +474,7 @@
             this.Controls.Add(this.tb_dob);
             this.Name = "Form1";
             this.RightToLeftLayout = true;
-            this.Tag = "Demographics";
+            this.Tag = "";
             this.Text = "SOAP Note";
             this.Right_Click_Menu.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -467,6 +516,10 @@
         private System.Windows.Forms.VScrollBar vScrollBar1;
         private System.Windows.Forms.Button button_saveptdata;
         private System.Windows.Forms.Button button_loadptdata;
+        private System.Windows.Forms.ListBox listbox_othermeds;
+        private System.Windows.Forms.Button button_removeothermeds;
+        private System.Windows.Forms.Button button_addothermeds;
+        private System.Windows.Forms.ComboBox combo_othermeds;
     }
 }
 
